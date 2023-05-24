@@ -1,0 +1,30 @@
+/* Navbar blanco con letras negras */
+.navbar {
+    background-color: white;
+    
+    font-family: 'Avenir book', sans-serif;
+  }
+
+  .nav-link{
+    color: black;
+  }
+  
+  /* Navbar-brand verde (#45ad30) */
+  .navbar-brand {
+    color: #45ad30;
+  }
+  
+  /* Hover de los apartados del Navbar */
+  .navbar-nav .nav-link:hover {
+    color: #45ad30;
+  }
+
+.container-lp{
+  
+    height: 400px; 
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)); 
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://images.unsplash.com/photo-1583753075968-1236ccb83c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=754&q=80")
+  }
+
+
+    
