@@ -13,20 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('tipo_de_planta', function (Blueprint $table) {
-            $table->renameColumn('nombre', 'name');
+        Schema::table('planta', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->change();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::table('tipo_de_planta', function (Blueprint $table) {
-            $table->renameColumn('name', 'nombre');
+        Schema::table('planta', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
         });
     }
 };

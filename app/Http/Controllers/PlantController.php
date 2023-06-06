@@ -6,6 +6,10 @@ use App\Models\TipoDePlanta;
 use App\Models\Planta;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+use App\Http\Controllers\HumidityController;
+
 
 
 class PlantController extends Controller
@@ -30,6 +34,9 @@ class PlantController extends Controller
         
         $imagenPath = $request->file('imagen')->store('plantas', 'public');
         $imagenUrl = Storage::url($imagenPath);
+
+        
+        
         
         $planta = new Planta;
         $planta->user_id = auth()->id();
@@ -38,16 +45,15 @@ class PlantController extends Controller
         $planta->descripcion = $validatedData['descripcion'];
         $planta->fecha_plantacion = $validatedData['fecha'];
         $planta->tipo_de_planta = $validatedData['tipo_planta'];
-        $planta->humedad_actual = 0;
         $planta->save();
-        
+   
 
         $user = Auth::user();
         $user->planta_registrada++;
         $user->save();
 
 
-        return redirect('/lista')->with('success', 'La planta ha sido registrada exitosamente.');
+        return redirect('/lista');
     }
 
     public function mostrarLista()
@@ -58,10 +64,12 @@ class PlantController extends Controller
     }
 
     public function mostrarDatosPlanta($id)
-    {
-        //dd(Planta::all());
+    {   
+
         $planta = Planta::findOrFail($id);
-        return view('verDatosPlanta', compact('planta'));
+        $humidityController = new HumidityController();
+        $humedad = $humidityController->obtenerHumedad();
+        return view('verDatosPlanta', compact('planta', 'humedad'));
     }
 
     public function eliminarPlanta($id)
@@ -73,7 +81,6 @@ class PlantController extends Controller
         $user->planta_registrada--;
         $user->save();
 
-        return redirect('/lista')->with('success', 'La planta ha sido eliminada.');
+        return redirect('/lista');
     }
-
 }

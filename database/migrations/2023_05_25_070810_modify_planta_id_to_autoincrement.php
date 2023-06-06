@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
+{
+    DB::statement('ALTER TABLE planta MODIFY id BIGINT UNSIGNED AUTO_INCREMENT');
+}
     }
 
     /**
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::table('planta', function (Blueprint $table) {
+            //
+        });
     }
 };

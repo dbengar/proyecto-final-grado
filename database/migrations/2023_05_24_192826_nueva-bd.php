@@ -4,26 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlantaTable extends Migration
+return new class extends Migration
 {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
-{
-    Schema::create('plantas', function (Blueprint $table) {
-        $table->id();
-        $table->string('imagen')->nullable();
-        $table->string('nombre');
-        $table->text('descripcion');
-        $table->date('fecha_plantacion');
-        $table->integer('humedad_actual');
-        $table->timestamps();
-    });
-}
+    {
 
+      
+    }
 
     /**
      * Reverse the migrations.
@@ -32,6 +25,15 @@ class CreatePlantaTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('users');
         Schema::dropIfExists('planta');
+        Schema::dropIfExists('tipo_de_planta');
+        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('migrations');
+        Schema::dropIfExists('mensajes_bot');
+        Schema::dropIfExists('failed_jobs');
     }
-}
+
+
+};

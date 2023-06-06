@@ -29,63 +29,66 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Plant Hive') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-md shadow-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                {{ config('app.name', 'Plant Hive') }}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav me-auto">
 
-                    </ul>
+                </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @endif
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <!-- Mostrar opciones de inicio de sesión/registro -->
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('lista') }}">{{ __('Lista') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('aniadir') }}">{{ __('Añadir') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{ __('Mensajes') }}</a>
+                        </li>
+                        
+                        <!-- Opción para usuarios normales -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('verDatosUsuario', ['id' => Auth::user()->id]) }}">{{ Auth::user()->name }}</a>
+                        </li>
 
-                            @if (Route::has('register'))
+                        <!-- Opción solo para usuarios administradores -->
+                        @can('toggleAdmin', App\Models\User::class)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('admin.users.index') }}">{{ __('Administracion') }}</a>
                             </li>
-                            @endif
-                        @else
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('lista') }}">{{ __('Lista') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('aniadir') }}">{{ __('Añadir') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Mensajes') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('verDatosUsuario', ['id' => Auth::user()->id]) }}">{{ Auth::user()->name }}</a>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                        @endcan
+                    @endguest
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+
         <br>
-        <main >
+        <main class="content">
             @yield('content')
         </main>
+
+        <footer>
+            <p>Copyright &copy; <a href="https://github.com/dbengar">Github</a></p>
+        </footer>
     </div>
-</body>
+
+  
+
+
 
 </html>

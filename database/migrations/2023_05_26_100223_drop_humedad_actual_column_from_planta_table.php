@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('humedad');
-        Schema::dropIfExists('umbral_humedad');
+        Schema::table('planta', function (Blueprint $table) {
+            $table->dropColumn('humedad_actual');
+        });
     }
 
     /**
@@ -24,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        // No es necesario hacer nada en el rollback
+        Schema::table('planta', function (Blueprint $table) {
+            $table->integer('humedad_actual')->nullable();
+        });
     }
 };

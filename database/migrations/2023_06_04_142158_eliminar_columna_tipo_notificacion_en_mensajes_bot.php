@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('planta', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+        // Eliminar la columna 'tipo_notificacion' de la tabla 'mensajes_bot'
+        Schema::table('mensajes_bot', function (Blueprint $table) {
+            $table->dropColumn('tipo_notificacion');
         });
     }
 
@@ -30,9 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('planta', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropColumn('user_id');
+        // Agregar la columna 'tipo_notificacion' de nuevo a la tabla 'mensajes_bot'
+        Schema::table('mensajes_bot', function (Blueprint $table) {
+            $table->string('tipo_notificacion');
         });
     }
 };
