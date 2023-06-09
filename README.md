@@ -31,7 +31,7 @@ Raspberry Garden es un proyecto destinado a crear una aplicación que monitorea 
 ## Instalación
 Para instalar y configurar la aplicación Raspberry Garden, sigue los siguientes pasos:
 
-## Instala proyecto en tu Raspberry Pi.
+### Instala proyecto en tu Raspberry Pi.
 - Clona el repositorio de Raspberry Garden en tu máquina local.
 - Configura la conexión a la base de datos en la aplicación.
 - Instala las dependencias necesarias utilizando Composer.
@@ -39,7 +39,7 @@ Para instalar y configurar la aplicación Raspberry Garden, sigue los siguientes
 - Inicia el servidor de desarrollo de Laravel.
 - Para obtener instrucciones detalladas de instalación, consulta el documento Manual Técnico de Instalación.
 
-## Uso
+### Uso
 La aplicación Raspberry Garden proporciona una interfaz de usuario intuitiva para monitorear los niveles de humedad de las plantas. Los usuarios pueden registrarse, iniciar sesión, agregar plantas a su lista y ver los niveles de humedad de sus plantas. La aplicación muestra mensajes cuando sea necesario regar las plantas según los umbrales establecidos.
 
 Para obtener más información sobre cómo utilizar la aplicación, consulta el documento Manual de Usuario.
