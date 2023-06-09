@@ -7,10 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-Raspberry Garden
+# Raspberry Garden
 Raspberry Garden es un proyecto destinado a crear una aplicación que monitorea la humedad del suelo de las plantas utilizando sensores ambientales de Raspberry Pi. La aplicación notifica a los usuarios cuando sus plantas necesitan riego, proporcionando una solución conveniente para el cuidado de las plantas.
 
-Características
+## Características
 Registro y autenticación de usuarios: Los usuarios pueden crear cuentas e iniciar sesión en la aplicación.
 Monitoreo de humedad del suelo: La aplicación lee y procesa datos de sensores de humedad del suelo conectados a una Raspberry Pi.
 Umbrales de humedad personalizables: Los usuarios pueden establecer umbrales de humedad para determinar cuándo regar sus plantas.
@@ -19,7 +19,8 @@ Registro de datos: La aplicación registra las mediciones de humedad del suelo p
 Compatibilidad con diferentes plantas: La aplicación admite diferentes tipos de plantas, lo que permite a los usuarios monitorear diversas especies.
 Acceso remoto: La aplicación se conecta a una red Wi-Fi, lo que permite el acceso y la gestión remota.
 Soporte para múltiples usuarios y dispositivos: La aplicación puede enviar notificaciones a varios usuarios y dispositivos.
-Tecnologías utilizadas
+
+## Tecnologías utilizadas
 Raspberry Pi: El dispositivo central que ejecuta la aplicación y se comunica con los sensores.
 Sensor de humedad del suelo: Conectado a la Raspberry Pi mediante pines GPIO para medir los niveles de humedad del suelo.
 PHP: El lenguaje de programación principal utilizado para desarrollar la aplicación web.
@@ -29,7 +30,7 @@ MySQL: Un sistema de gestión de bases de datos relacional de código abierto pa
 Instalación
 Para instalar y configurar la aplicación Raspberry Garden, sigue los siguientes pasos:
 
-Instala Laravel en tu Raspberry Pi.
+## Instala proyecto en tu Raspberry Pi.
 Clona el repositorio de Raspberry Garden en tu máquina local.
 Configura la conexión a la base de datos en la aplicación.
 Instala las dependencias necesarias utilizando Composer.
@@ -37,20 +38,21 @@ Ejecuta las migraciones de la base de datos para crear las tablas requeridas.
 Inicia el servidor de desarrollo de Laravel.
 Para obtener instrucciones detalladas de instalación, consulta el documento Manual Técnico de Instalación.
 
-Uso
+## Uso
 La aplicación Raspberry Garden proporciona una interfaz de usuario intuitiva para monitorear los niveles de humedad de las plantas y recibir notificaciones. Los usuarios pueden registrarse, iniciar sesión, agregar plantas a su lista y ver los niveles de humedad de sus plantas. La aplicación enviará notificaciones cuando sea necesario regar las plantas según los umbrales establecidos.
 
 Para obtener más información sobre cómo utilizar la aplicación, consulta el documento Manual de Usuario.
 
-Mejoras futuras
+## Mejoras futuras
 Si bien la versión actual de Raspberry Garden ofrece funcionalidades esenciales para el cuidado de las plantas, existen varias áreas para posibles mejoras:
 
 Integración con datos meteorológicos: Mejorar la aplicación incorporando datos meteorológicos para determinar horarios óptimos de riego basados en las condiciones locales.
 Control inteligente de riego: Implementar un control inteligente de riego utilizando algoritmos de inteligencia artificial para optimizar el uso del agua y la salud de las plantas.
 Visualización de datos: Desarrollar representaciones gráficas de los niveles de humedad del suelo a lo largo del tiempo para un mejor análisis y toma de decisiones.
 Aplicación móvil: Ampliar la funcionalidad de la aplicación mediante el desarrollo de una aplicación móvil para un acceso y control convenientes desde cualquier lugar.
-Contribuidores
+
+## Contribuidores
 Raspberry Garden es un proyecto desarrollado por [Tu Nombre] y [Otro Colaborador], como parte de su proyecto de fin de carrera.
 
-Licencia
+## Licencia
 Este proyecto está licenciado bajo la Licencia MIT.
