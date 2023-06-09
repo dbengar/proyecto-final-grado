@@ -83,4 +83,43 @@ class PlantController extends Controller
 
         return redirect('/lista');
     }
+
+    public function editarPlanta($id)
+    {
+        $planta = Planta::findOrFail($id);
+        $tiposDePlanta = TipoDePlanta::all();
+
+        return view('editar', compact('planta', 'tiposDePlanta'));
+    }
+
+    public function actualizarPlanta(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'imagen' => 'image',
+            'nombre' => 'required|string',
+            'descripcion' => 'required|string',
+            'tipo_planta' => 'required|string'
+        ]);
+
+        $planta = Planta::findOrFail($id);
+        $planta->nombre = $validatedData['nombre'];
+        $planta->descripcion = $validatedData['descripcion'];
+        $planta->tipo_de_planta = $validatedData['tipo_planta'];
+
+        if ($request->hasFile('imagen')) {
+            
+            Storage::delete('public/' . $planta->imagen);
+
+   
+            $imagenPath = $request->file('imagen')->store('plantas', 'public');
+            $imagenUrl = Storage::url($imagenPath);
+            $planta->imagen = $imagenUrl;
+        }
+
+        $planta->save();
+
+        return redirect('/lista');
+    }
+
+
 }

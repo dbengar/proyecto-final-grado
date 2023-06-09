@@ -16,13 +16,9 @@ class MensajesBotSeeder extends Seeder
     public function run()
     {
         MensajesBot::create([
-            'mensaje' => 'Su planta tiene un porcentaje bajo de humedad al recomendado',
-            'tipo_mensaje' => 'humedad_baja'
+            'mensaje' => 'Su planta tiene el nivel correcto de humedad aconsejada',
+            'tipo_mensaje' => 'humedad_correcta'
         ]);
 
-        MensajesBot::create([
-            'mensaje' => 'Su planta tiene un porcentaje alto de humedad al recomendado',
-            'tipo_mensaje' => 'humedad_alta'
-        ]);
     }
 }

@@ -3,7 +3,8 @@
 @section('content')
   <div class="contenedor">
     <div class="imagen">
-      <img src="{{ Auth::user()->user_imagen ? asset('storage/' . Auth::user()->user_imagen) : asset('user_img/user.png') }}" alt="Imagen de perfil">
+    
+      <img src="{{ Auth::user()->user_imagen ? asset('storage'). '/users/' . basename(Auth::user()->user_imagen) : asset('user_img/user.png') }}" alt="Imagen de perfil" class="img-fluid rounded float-start">
       <form id="user-form" action="{{ route('actualizar-imagen-perfil') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">

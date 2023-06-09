@@ -20,7 +20,6 @@ class AdminController extends Controller
         $users = User::all();
         $plantas = Planta::all();
     
-        // Haz lo que necesites con los usuarios y las plantas
     
         return view('admin', compact('users', 'plantas'));
     }

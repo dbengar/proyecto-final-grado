@@ -4,6 +4,7 @@ use App\Http\Controllers\PlantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HumidityController;
+use App\Http\Controllers\MensajesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,4 +47,9 @@ Route::get('/obtener-humedad', [HumidityController::class, 'obtenerHumedad']);
 Route::get('/obtener-humedad-actual', [HumidityController::class, 'obtenerHumedadActual']);
 
 Route::post('/actualizar-imagen-perfil', [UserController::class, 'updateProfileImage'])->name('actualizar-imagen-perfil');
+
+Route::get('/obtener-mensaje/{tipo_mensaje}', [MensajesController::class, 'obtenerMensaje'])->name('obtenerMensaje');
+
+Route::get('/planta/{id}/editar', [PlantController::class, 'editarPlanta'])->name('editarPlanta');
+Route::put('/planta/{id}', [PlantController::class, 'actualizarPlanta'])->name('actualizarPlanta');
 

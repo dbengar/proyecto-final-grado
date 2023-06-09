@@ -51,19 +51,16 @@
                         <!-- Mostrar opciones de inicio de sesión/registro -->
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('lista') }}">{{ __('Lista') }}</a>
+                            <a class="nav-link" href="{{ route('lista') }}">{{ __('Tu Jardín') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('aniadir') }}">{{ __('Añadir') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('Mensajes') }}</a>
-                        </li>
-                        
+                        </li>                        
                         <!-- Opción para usuarios normales -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('verDatosUsuario', ['id' => Auth::user()->id]) }}">{{ Auth::user()->name }}</a>
-                        </li>
+                            <a class="nav-link" href="{{ route('verDatosUsuario', ['id' => Auth::user()->id]) }}">
+                            <img src="{{ Auth::user()->user_imagen ? asset('storage'). '/users/' . basename(Auth::user()->user_imagen) : asset('user_img/user.png') }}" alt="Imagen de perfil" class="img-fluid rounded float-start" style="max-width: 30px; max-height: 30px;"></a>            
+                         </li>
 
                         <!-- Opción solo para usuarios administradores -->
                         @can('toggleAdmin', App\Models\User::class)
@@ -78,13 +75,11 @@
     </nav>
 
         <br>
-        <main class="content">
+        <main class="container">
             @yield('content')
         </main>
 
-        <footer>
-            <p>Copyright &copy; <a href="https://github.com/dbengar">Github</a></p>
-        </footer>
+       
     </div>
 
   
