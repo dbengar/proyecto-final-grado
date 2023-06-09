@@ -14,7 +14,7 @@ Raspberry Garden es un proyecto destinado a crear una aplicación que monitorea 
 - Registro y autenticación de usuarios: Los usuarios pueden crear cuentas e iniciar sesión en la aplicación.
 - Monitoreo de humedad del suelo: La aplicación lee y procesa datos de sensores de humedad del suelo conectados a una Raspberry Pi.
 - Umbrales de humedad personalizables: Los usuarios pueden establecer umbrales de humedad para determinar cuándo regar sus plantas.
-- Notificaciones: La aplicación envía notificaciones a los usuarios cuando la humedad del suelo cae por debajo del umbral establecido.
+- Mensajes: La aplicación muestra mensajes a los usuarios cuando la humedad del suelo cae o es superior por debajo del umbral establecido.
 - Registro de datos: La aplicación registra las mediciones de humedad del suelo para futuras referencias.
 - Compatibilidad con diferentes plantas: La aplicación admite diferentes tipos de plantas, lo que permite a los usuarios monitorear diversas especies.
 - Acceso remoto: La aplicación se conecta a una red Wi-Fi, lo que permite el acceso y la gestión remota.
