@@ -7,60 +7,50 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+Raspberry Garden
+Raspberry Garden es un proyecto destinado a crear una aplicación que monitorea la humedad del suelo de las plantas utilizando sensores ambientales de Raspberry Pi. La aplicación notifica a los usuarios cuando sus plantas necesitan riego, proporcionando una solución conveniente para el cuidado de las plantas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Características
+Registro y autenticación de usuarios: Los usuarios pueden crear cuentas e iniciar sesión en la aplicación.
+Monitoreo de humedad del suelo: La aplicación lee y procesa datos de sensores de humedad del suelo conectados a una Raspberry Pi.
+Umbrales de humedad personalizables: Los usuarios pueden establecer umbrales de humedad para determinar cuándo regar sus plantas.
+Notificaciones: La aplicación envía notificaciones a los usuarios cuando la humedad del suelo cae por debajo del umbral establecido.
+Registro de datos: La aplicación registra las mediciones de humedad del suelo para futuras referencias.
+Compatibilidad con diferentes plantas: La aplicación admite diferentes tipos de plantas, lo que permite a los usuarios monitorear diversas especies.
+Acceso remoto: La aplicación se conecta a una red Wi-Fi, lo que permite el acceso y la gestión remota.
+Soporte para múltiples usuarios y dispositivos: La aplicación puede enviar notificaciones a varios usuarios y dispositivos.
+Tecnologías utilizadas
+Raspberry Pi: El dispositivo central que ejecuta la aplicación y se comunica con los sensores.
+Sensor de humedad del suelo: Conectado a la Raspberry Pi mediante pines GPIO para medir los niveles de humedad del suelo.
+PHP: El lenguaje de programación principal utilizado para desarrollar la aplicación web.
+Laravel: Un framework de PHP que proporciona funciones avanzadas para el desarrollo rápido de aplicaciones.
+Bootstrap 5: Un framework de front-end utilizado para diseñar la interfaz de usuario de la aplicación.
+MySQL: Un sistema de gestión de bases de datos relacional de código abierto para almacenar y gestionar datos.
+Instalación
+Para instalar y configurar la aplicación Raspberry Garden, sigue los siguientes pasos:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Instala Laravel en tu Raspberry Pi.
+Clona el repositorio de Raspberry Garden en tu máquina local.
+Configura la conexión a la base de datos en la aplicación.
+Instala las dependencias necesarias utilizando Composer.
+Ejecuta las migraciones de la base de datos para crear las tablas requeridas.
+Inicia el servidor de desarrollo de Laravel.
+Para obtener instrucciones detalladas de instalación, consulta el documento Manual Técnico de Instalación.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Uso
+La aplicación Raspberry Garden proporciona una interfaz de usuario intuitiva para monitorear los niveles de humedad de las plantas y recibir notificaciones. Los usuarios pueden registrarse, iniciar sesión, agregar plantas a su lista y ver los niveles de humedad de sus plantas. La aplicación enviará notificaciones cuando sea necesario regar las plantas según los umbrales establecidos.
 
-## Learning Laravel
+Para obtener más información sobre cómo utilizar la aplicación, consulta el documento Manual de Usuario.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Mejoras futuras
+Si bien la versión actual de Raspberry Garden ofrece funcionalidades esenciales para el cuidado de las plantas, existen varias áreas para posibles mejoras:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Integración con datos meteorológicos: Mejorar la aplicación incorporando datos meteorológicos para determinar horarios óptimos de riego basados en las condiciones locales.
+Control inteligente de riego: Implementar un control inteligente de riego utilizando algoritmos de inteligencia artificial para optimizar el uso del agua y la salud de las plantas.
+Visualización de datos: Desarrollar representaciones gráficas de los niveles de humedad del suelo a lo largo del tiempo para un mejor análisis y toma de decisiones.
+Aplicación móvil: Ampliar la funcionalidad de la aplicación mediante el desarrollo de una aplicación móvil para un acceso y control convenientes desde cualquier lugar.
+Contribuidores
+Raspberry Garden es un proyecto desarrollado por [Tu Nombre] y [Otro Colaborador], como parte de su proyecto de fin de carrera.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
